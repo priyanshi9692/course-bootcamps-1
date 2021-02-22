@@ -7,7 +7,7 @@ public class LinkedListMain
    public static void main(String[] args)
    {
       ChoresLinkedListImpl<Chores>
-                    chores_list = new ChoresLinkedListImpl<Chores>();
+              chores_list = new ChoresLinkedListImpl<Chores>();
 
       Chores a = new Chores("Make bed", 10);
       Chores b = new Chores("Do laundry", 5);
@@ -16,33 +16,38 @@ public class LinkedListMain
       Chores e = new Chores("Excercise", 70);
       Chores f = new Chores("Sleep", 50);
 
-      chores_list.add(a); 
-      chores_list.add(b); 
+      chores_list.add(a);
+      chores_list.add(b);
       chores_list.add(Where.FRONT, c);
+      System.out.println("add front:" +chores_list.toString());
       chores_list.add(Where.MIDDLE, 1, d);
+      System.out.println("add middle:" +chores_list.toString());
       chores_list.add(e);
+      System.out.println("add back:" +chores_list.toString());
       chores_list.add(Where.MIDDLE, 4, f);
-   
+      System.out.println("add middle:" +chores_list.toString());
+
       System.out.println("Size of collection: " + chores_list.size());
       System.out.println("Collection contains:");
-      System.out.println(chores_list);
+      System.out.println(chores_list.toString());
 
       System.out.print("Searching for " + a + "...");
       if (chores_list.contains(a))  {
-          System.out.println("FOUND");
+         System.out.println("FOUND");
       }
       else  {
-          System.out.println("NOT FOUND");
+         System.out.println("NOT FOUND");
       }
 
       Chores g = chores_list.remove(1);
       System.out.println("Removed " + g);
+      System.out.println("Print:"+chores_list.toString());
       System.out.print("Searching for " + g + "...");
       if (chores_list.contains(g))  {
-          System.out.println("FOUND");
+         System.out.println("FOUND");
       }
       else  {
-          System.out.println("NOT FOUND");
+         System.out.println("NOT FOUND");
       }
 
       g = chores_list.remove(2);
@@ -50,9 +55,10 @@ public class LinkedListMain
 
       System.out.println("Size of collection: " + chores_list.size());
       System.out.println("Collection contains:");
-      System.out.println(chores_list);
+      System.out.println(chores_list.toString());
 
       return;
    }
 
 }
+
